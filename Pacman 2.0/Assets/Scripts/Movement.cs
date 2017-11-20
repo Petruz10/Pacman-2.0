@@ -19,7 +19,7 @@ public class Movement : MonoBehaviour
 		float xPos = transform.position.x + (Input.GetAxis("Horizontal") * speed);
 		float yPos = transform.position.y + (Input.GetAxis("Vertical") * speed);
 
-		playerPos = new Vector3 (Mathf.Clamp (xPos, -40f, 40f),(yPos), 0f);
+		playerPos = new Vector3 (xPos, yPos, 0f);
 		transform.position = playerPos;
 	}
 }
