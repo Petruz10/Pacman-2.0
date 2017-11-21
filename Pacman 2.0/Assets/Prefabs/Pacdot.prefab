@@ -25,7 +25,7 @@ GameObject:
   - component: {fileID: 114335133027747388}
   m_Layer: 0
   m_Name: Pacdot
-  m_TagString: Untagged
+  m_TagString: pacdot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -94,7 +94,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gm: {fileID: 0}
-  playerGO: {fileID: 0}
 --- !u!135 &135515948319999996
 SphereCollider:
   m_ObjectHideFlags: 1
