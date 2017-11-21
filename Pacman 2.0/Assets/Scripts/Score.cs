@@ -16,6 +16,9 @@ public class Score : MonoBehaviour {
 
 	void OnTriggerEnter (Collider other)
 	{
-		Destroy(this.gameObject);
+		if (other.tag == "Player") 
+		{
+			Destroy (this.gameObject);
+		}
 	}
 }
