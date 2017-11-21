@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Maze
   - pacdot
+  - enemy
   layers:
   - Default
   - TransparentFX

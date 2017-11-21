@@ -20,7 +20,7 @@ public class Movement : MonoBehaviour
 	// Update is called once per frame
 	void Update () 
 	{
-		if (gm.gameOver)
+		if (gm.lost)
 			return;
 		float xPos = transform.position.x + (Input.GetAxis("Horizontal") * speed);
 		float yPos = transform.position.y + (Input.GetAxis("Vertical") * speed);

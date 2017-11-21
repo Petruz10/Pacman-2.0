@@ -9,7 +9,7 @@ public class GameManager : MonoBehaviour
 	public int score = 0;
 	public int dots = 0;
 
-	public bool gameOver = false;
+	public bool lost = false;
 
 	void Awake()
 	{
@@ -46,6 +46,11 @@ public class GameManager : MonoBehaviour
 	void finish()
 	{
 		Debug.Log("You Won!");
-		gameOver = true;
+		lost = true;
+	}
+
+	public void gameOver()
+	{
+		Debug.Log ("GAME OVER!");
 	}
 }
