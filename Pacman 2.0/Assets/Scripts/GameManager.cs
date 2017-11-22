@@ -2,14 +2,21 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour 
 {
 	public GameObject scoreText;
+	public GameObject gameAreaGO;
+	public GameObject playBtn;
+	public GameObject startTxt;
+
 	public int score = 0;
 	public int dots = 0;
 
 	public bool lost = false;
+
+	private GameObject cloneGameAreaGO;
 
 	void Awake()
 	{
@@ -43,14 +50,32 @@ public class GameManager : MonoBehaviour
 		}
 	}
 
-	void finish()
+	public void play()
 	{
-		Debug.Log("You Won!");
+		score = 0;
+		startTxt.SetActive (false);
+		playBtn.SetActive(false);
+
+		cloneGameAreaGO = Instantiate (gameAreaGO, new Vector3(-11,0,0), transform.rotation) as GameObject;
+		lost = false;
+	}
+
+	void finish()
+	{ 
+		startTxt.GetComponent<Text>().text = "You Won!";
+		startTxt.SetActive (true);
+
 		lost = true;
 	}
 
 	public void gameOver()
 	{
-		Debug.Log ("GAME OVER!");
+		Destroy (cloneGameAreaGO);
+
+		startTxt.GetComponent<Text>().text = "GAME OVER!";
+		startTxt.SetActive (true);
+		playBtn.SetActive (true);
+
+		lost = true;
 	}
 }
