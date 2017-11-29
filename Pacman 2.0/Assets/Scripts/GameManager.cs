@@ -46,7 +46,7 @@ public class GameManager : MonoBehaviour
 		scoreText.GetComponent<Text> ().text = score.ToString();
 
 		if (score == dots) {
-			finish ();
+			Invoke ("finish", 1);
 		}
 	}
 
@@ -64,8 +64,6 @@ public class GameManager : MonoBehaviour
 	{ 
 		startTxt.GetComponent<Text>().text = "You Won!";
 		startTxt.SetActive (true);
-
-		lost = true;
 	}
 
 	public void gameOver()
@@ -75,7 +73,5 @@ public class GameManager : MonoBehaviour
 		startTxt.GetComponent<Text>().text = "GAME OVER!";
 		startTxt.SetActive (true);
 		playBtn.SetActive (true);
-
-		lost = true;
 	}
 }

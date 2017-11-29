@@ -33,7 +33,14 @@ public class GhostMove : MonoBehaviour
 	{
 		if (other.tag == "Player") 
 		{
-			gm.gameOver ();
+			gm.lost = true;
+			Invoke ("gameOver", 1);
+
 		}
+	}
+
+	void gameOver()
+	{
+		gm.gameOver ();
 	}
 }
