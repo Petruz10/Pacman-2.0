@@ -14,6 +14,8 @@ public class GameManager : MonoBehaviour
 	public int score = 0;
 	public int dots = 0;
 
+	private int highscore;
+
 	public bool lost = false;
 
 	private GameObject cloneGameAreaGO;
@@ -26,6 +28,7 @@ public class GameManager : MonoBehaviour
 	void Setup()
 	{
 		dots = GameObject.FindGameObjectsWithTag("pacdot").Length;
+		highscore = PlayerPrefs.GetInt ("highscore", highscore);
 	}
 
 	// Use this for initialization
@@ -43,7 +46,7 @@ public class GameManager : MonoBehaviour
 	public void updateScore()
 	{
 		score += 1;
-		scoreText.GetComponent<Text> ().text = score.ToString();
+		scoreText.GetComponent<Text> ().text = score.ToString() + ", High  " + highscore.ToString();
 
 		if (score == dots) {
 			Invoke ("finish", 1);
@@ -61,17 +64,31 @@ public class GameManager : MonoBehaviour
 	}
 
 	void finish()
-	{ 
+	{
+		checkHighscore ();
+
 		startTxt.GetComponent<Text>().text = "You Won!";
 		startTxt.SetActive (true);
 	}
 
 	public void gameOver()
 	{
+		checkHighscore ();
+
 		Destroy (cloneGameAreaGO);
 
 		startTxt.GetComponent<Text>().text = "GAME OVER!";
 		startTxt.SetActive (true);
 		playBtn.SetActive (true);
+	}
+
+	void checkHighscore ()
+	{
+		if (highscore < score) 
+		{
+			highscore = score;
+			PlayerPrefs.SetInt ("highscore", highscore);
+		}
+
 	}
 }
