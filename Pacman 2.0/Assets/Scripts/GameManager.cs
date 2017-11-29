@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour 
 {
 	public GameObject scoreText;
+	public GameObject highscoreText;
 	public GameObject gameAreaGO;
 	public GameObject playBtn;
 	public GameObject startTxt;
@@ -29,6 +30,8 @@ public class GameManager : MonoBehaviour
 	{
 		dots = GameObject.FindGameObjectsWithTag("pacdot").Length;
 		highscore = PlayerPrefs.GetInt ("highscore", highscore);
+
+		highscoreText.GetComponent<Text> ().text = highscore.ToString ();
 	}
 
 	// Use this for initialization
@@ -46,7 +49,7 @@ public class GameManager : MonoBehaviour
 	public void updateScore()
 	{
 		score += 1;
-		scoreText.GetComponent<Text> ().text = score.ToString() + ", High  " + highscore.ToString();
+		scoreText.GetComponent<Text> ().text = score.ToString();
 
 		if (score == dots) {
 			Invoke ("finish", 1);
@@ -88,6 +91,7 @@ public class GameManager : MonoBehaviour
 		{
 			highscore = score;
 			PlayerPrefs.SetInt ("highscore", highscore);
+			highscoreText.GetComponent<Text> ().text = highscore.ToString ();
 		}
 
 	}
