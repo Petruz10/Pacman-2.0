@@ -10628,7 +10628,7 @@ Transform:
   m_GameObject: {fileID: 1982183358745522}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -2, y: -6.4, z: 0}
-  m_LocalScale: {x: 3, y: 3, z: 3}
+  m_LocalScale: {x: 3.5, y: 3.5, z: 3.5}
   m_Children: []
   m_Father: {fileID: 4937044493233216}
   m_RootOrder: 2
@@ -26344,7 +26344,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: effcc9740f6484d2ebb84aef8a7750c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0.5
+  speed: 0.3
 --- !u!114 &114004703301844312
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -26769,7 +26769,7 @@ MonoBehaviour:
   - {fileID: 4084328508061160}
   - {fileID: 4109003665048246}
   - {fileID: 4765921173489562}
-  speed: 0.5
+  speed: 0.3
 --- !u!114 &114161190619538126
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -27028,7 +27028,7 @@ MonoBehaviour:
   - {fileID: 4738742951686318}
   - {fileID: 4108960110258762}
   - {fileID: 4178724316936208}
-  speed: 0.4
+  speed: 0.25
 --- !u!114 &114221128462819138
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -27935,7 +27935,7 @@ MonoBehaviour:
   - {fileID: 4047551963104662}
   - {fileID: 4768335723352580}
   - {fileID: 4089547174426846}
-  speed: 0.55
+  speed: 0.3
 --- !u!114 &114557536524467776
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -29135,7 +29135,7 @@ MonoBehaviour:
   - {fileID: 4123449874643366}
   - {fileID: 4740406389771950}
   - {fileID: 4595696155622896}
-  speed: 0.45
+  speed: 0.35
 --- !u!114 &114976266996476676
 MonoBehaviour:
   m_ObjectHideFlags: 1
