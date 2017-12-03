@@ -1,4 +1,12 @@
-﻿using System.Collections;
+﻿/*
+ * Petra Íris Leifsdóttir
+ * 2304549
+ * leifsdottir@chapman.edu
+ * CPSC-236-02
+ * Final Project - Pacman 2.0 
+*/
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -10,12 +18,19 @@ public class GhostMove : MonoBehaviour
 
 	private GameManager gm;
 
-	// Use this for initialization
+	/*
+	 * first method to be called
+	 * finds the gameManager
+	 */
 	void Start () {
 		gm = GameObject.Find ("GameManager").GetComponent<GameManager> ();
 	}
 
-	// Update is called once per frame
+	/*
+	 * called once per frame
+	 * if the user has lost return 
+	 * else moves the ghost between the different waypoints, if all have been reaced start at the first
+	 */
 	void Update () 
 	{
 		if (gm.lost)
@@ -29,6 +44,9 @@ public class GhostMove : MonoBehaviour
 		
 	}
 
+	/*
+	 * If you collide with the player set lost to true and call gameOver method in 1 sec
+	 */
 	void OnTriggerEnter (Collider other)
 	{
 		if (other.tag == "Player") 
@@ -39,6 +57,9 @@ public class GhostMove : MonoBehaviour
 		}
 	}
 
+	/*
+	 * calls gameOver method in the gameManager
+	 */
 	void gameOver()
 	{
 		gm.gameOver ();

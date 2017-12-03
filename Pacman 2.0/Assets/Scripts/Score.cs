@@ -1,4 +1,12 @@
-﻿using System.Collections;
+﻿/*
+ * Petra Íris Leifsdóttir
+ * 2304549
+ * leifsdottir@chapman.edu
+ * CPSC-236-02
+ * Final Project - Pacman 2.0 
+*/
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -8,17 +16,19 @@ public class Score : MonoBehaviour
 {
 	public GameManager gm;
 
-	// Use this for initialization
+	/*
+	 * first method to be called
+	 * finds the gameManager
+	 */
 	void Start () 
 	{
 		gm = GameObject.Find ("GameManager").GetComponent<GameManager> ();
 	}
 	
-	// Update is called once per frame
-	void Update () {
-		
-	}
-
+	/*
+	 * when colliding with the player destroy this GO
+	 * call the updateScore method in the gameManager
+	 */
 	void OnTriggerEnter (Collider other)
 	{
 		if (other.tag == "Player") 

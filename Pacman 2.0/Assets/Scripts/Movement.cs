@@ -1,4 +1,12 @@
-﻿using System.Collections;
+﻿/*
+ * Petra Íris Leifsdóttir
+ * 2304549
+ * leifsdottir@chapman.edu
+ * CPSC-236-02
+ * Final Project - Pacman 2.0 
+*/
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -10,14 +18,19 @@ public class Movement : MonoBehaviour
 	private GameManager gm;
 
 
-	// Use this for initialization
+	/*
+	 * first method to be called
+	 * finds the gameManager
+	 */
 	void Start () 
 	{
 		gm = GameObject.Find ("GameManager").GetComponent<GameManager> ();
 	}
 
-	//Reused some script from the BrickBuster game
-	// Update is called once per frame
+	/*
+	 * if lost is true return
+	 * else move the player when they press the arrow keys or wasd
+	 */
 	void Update () 
 	{
 		if (gm.lost)
